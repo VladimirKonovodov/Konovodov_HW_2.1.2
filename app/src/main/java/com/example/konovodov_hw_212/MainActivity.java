@@ -28,16 +28,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this
-                        ,mCountriesSpinner.getSelectedItem().toString()
+                        , mCountriesSpinner.getSelectedItem().toString()
                                 + " "
                                 + mCitiesSpinner.getSelectedItem().toString()
                                 + " "
                                 + mHouseNumberSpinner.getSelectedItem().toString()
-                        ,Toast.LENGTH_LONG)
+                        , Toast.LENGTH_LONG)
                         .show();
             }
         });
     }
+
     private void initViews() {
         mCountriesSpinner = findViewById(R.id.countriesSpinner);
         mCitiesSpinner = findViewById(R.id.citiesSpinner);
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         initSpinnerCountries();
         initHousNumbersSpinner();
     }
+
     private void initHousNumbersSpinner() {
         Integer[] houseNumbers = new Integer[50];
         for (int i = 1; i <= 50; i++) {
@@ -66,11 +68,13 @@ public class MainActivity extends AppCompatActivity {
                 String[] countries = getResources().getStringArray(R.array.countries);
                 initSpinnerCities(countries[i]);
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
     }
+
     private void initSpinnerCities(String country) {
         ArrayAdapter<CharSequence> adapter = null;
         switch (country) {
